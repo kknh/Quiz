@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useGlobalContext } from '../context/Context'
 import updateQuery from '../actions/updateQuery'
 import updateIsFetching from '../actions/updateIsFetching'
-import { flushSync } from 'react-dom'
 
 const SetupForm = () => {
 	const { fetchState, fetchDispatch } = useGlobalContext()
@@ -31,13 +30,8 @@ const SetupForm = () => {
 	const onSubmitHandler = async (e) => {
 		e.preventDefault()
 
-		flushSync(() => {
-			updateQuery(query, fetchDispatch)
-		})
-
-		flushSync(() => {
-			updateIsFetching(true, fetchDispatch)
-		})
+		updateQuery(query, fetchDispatch)
+		updateIsFetching(true, fetchDispatch)
 	}
 
 	return (
