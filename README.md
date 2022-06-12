@@ -2,6 +2,8 @@
 
 Cute quiz game!
 
+Try out on https://tranquil-sundae-df9c49.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
